@@ -1,99 +1,329 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #fff, #3EB24B);
-    color: white;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+} 
+
+:root {
+    --cor-preta: #000;
+    --cor-branca: #FFF;
+    --verde-principal: #3EB24B;
+    --verde-secundario: #B5FFB3;
 }
 
-.container {
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 800px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 2s ease-in-out;
+body {
+    background-color: var(--cor-branca);
+    padding: 0 1rem;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+header, 
+.sec-principal, 
+.sec-cursos,
+footer {
+    border-color: var(--cor-preta);
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    padding: 1.25rem;
 }
 
-header {
-    margin-bottom: 30px;
+header img {
+    display: block;
+    margin: 1rem auto;
 }
 
-.tutorial, .downloads {
-    margin: 20px 0;
-}
-
-.download-buttons {
+header nav {
     display: flex;
-    justify-content: space-around;
+    margin: 1rem auto 0;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.download-btn {
-    background: black;
-    color: white;
-    padding: 15px 30px;
-    margin: 10px;
-    border: none;
-    border-radius: 50px;
+nav a {
+    color: var(--cor-preta);
+    font-size: 1.25rem;
+    padding: 0.5rem;
     text-decoration: none;
-    font-size: 1.2em;
-    transition: all 0.3s;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+header nav a:nth-child(2n-1) {
+    text-align: right;
+}
+
+header nav a:nth-child(5n) {
+    padding-left: 0;
+}
+
+.button {
+    background-color: var(--verde-principal);
+    border: 2px solid var(--cor-preta);
+    box-shadow: 4px 4px 0 var(--cor-preta);
+    color: var(--cor-preta);
+    display: block;
+    font-size: 1.25rem;
+    padding: 0.75rem 1rem;
+    max-width: 14rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.sec-principal {
+    padding-right: 0;
+    padding-bottom: 16rem;
+}
+
+.sec-principal img {
+    display: block;
+    margin: 1.25rem 0 0 auto;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 105%;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3{
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+ol{
+    margin-left: 1rem;
+    font-weight: 300;
+    font-size: 1.6rem;
+    
+}
+
+
+li{
+    margin: 1rem;
+}
+
+.sec-principal p {
+    font-size: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.sec-principal .button {
     position: relative;
-    overflow: hidden;
 }
 
-.download-btn:hover {
-    background: #3EB24B;
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-}
-
-.download-btn::before {
+.sec-principal .button::after {
     content: '';
+    background: url("img/arrow-curve.svg");
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translate(-50%, -50%) rotate(45deg);
-    transition: all 0.75s;
-    opacity: 0;
+    top: 5rem;
+    right: -4rem;
+    height: 48px;
+    width: 132px;    
 }
 
-.download-btn:hover::before {
-    width: 0;
-    height: 0;
-    opacity: 1;
+.decoracao {
+    display: block;
+    position: relative;
 }
 
-.animation-3d {
+.decoracao::after {
+    content: '';
+    background: url("img/three-dashes.svg");
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    animation: rotate 10s linear infinite;
-    transform-style: preserve-3d;
+    top: -0.75rem;
+    height: 36px;
+    width: 40px;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotateX(0) rotateY(0);
+.sec-cursos {
+    padding-bottom: 8rem;
+}
+
+.cards-cursos {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.25rem;
+    margin-top: -8rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background-color: var(--verde-principal);
+    border: 2px solid var(--cor-preta);
+    box-shadow: 4px 4px 0 var(--cor-preta);
+    max-width: 17rem;
+    padding: 2rem 0 0 2rem;
+}
+
+.card:nth-child(2n) {
+    align-self: end;
+    background-color: var(--verde-secundario);
+}
+
+.card strong {
+    display: block;
+    font-size: 1.5rem;
+    margin: 1rem 1rem 0;
+}
+
+.alinha-txt {
+    text-align: justify;
+    word-wrap: break-word;
+    margin: 0.4rem;
+}
+
+.card a {
+    display: block;
+    margin: 3rem 0 0 auto;
+    width: fit-content;
+}
+
+footer {
+    border-bottom: 0;
+    padding: 1rem 1.25rem 4rem;
+    text-align: center;
+}
+
+footer nav a {
+    display: block;
+    padding-left: 0;
+    text-align: center;
+}
+
+.download-page {
+    margin: auto;
+}
+
+.download-page-button {
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.download-page-button:hover { 
+    background-color: var(--verde-secundario);
+}
+
+
+.download-mat, button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.about-mat {
+    margin: 0.5rem;
+    padding: 0.3rem;
+    font-size: 1.3rem;
+}
+
+.download-mat.div, button:hover {
+    background-color: var(--cor-branca);
+}
+
+.margem-topo-1 {
+    margin-top: 1rem;
+}
+
+.margem-topo-2 {
+    margin-top: 2rem;
+}
+
+.margem-baixo-1 {
+    margin-bottom: 1rem;
+}
+
+.margem-baixo-2 {
+    margin-bottom: 2rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.texto-primario {
+    color: var(--verde-principal);
+    
+}
+
+.texto-centro {
+    text-align: center;
+}
+
+@media screen and (min-width: 40rem) {
+    header nav {
+        display: block;
+        text-align: center;
     }
-    to {
-        transform: rotateX(360deg) rotateY(360deg);
+
+    .cards-cursos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card:nth-child(2n) {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    header div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header img,
+    header nav,
+    header .button {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 72rem) {
+    h1, h2 {
+        font-size: 4rem;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 72rem;
+    }
+
+    .container.row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .about-column {
+        text-align: justify;
+    } 
+
+    .about-column p {
+        font-size: 1.25rem;
+        max-width: 16rem;
+        text-align: center;
+    } 
+
+    footer nav {
+        flex: 2;
+    } 
+}
+
+@media screen and (min-width: 80rem) {
+    .container {
+        max-width: 80rem;
     }
 }

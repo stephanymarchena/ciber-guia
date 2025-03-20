@@ -6,22 +6,27 @@
     <title>Contato</title>
     <meta name="description" content="Site sobre Cibersegurança, o que é, sua importância e conteúdos relacionados.">
     <meta name="keywords" content="segurança online, tecnologia">
-    <meta name="author" content="Jhony">
     <link rel="stylesheet" href="form.css">
     <link rel="icon" href="img/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    
     <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="cursos.html">Todos os Guias</a></li>
-            </ul>
-        </nav>
+        <div class="container"> <!--Classe para alinhar componentes no modo responsivo-->
+           <a href="index.html"><img src="img/icon.png" alt="Logo Ciber Guia"></a>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="cursos.html">Guias</a>
+                <a href="about.html">Sobre nós</a>
+                <a href="Dowload.html">Downloads</a>
+            </nav>
+        </div>
     </header>
+   
     <main>
         <section class="content" id="formulario">
             <h2>Alguma dúvida ou sugestão? Entre em contato.</h2>
@@ -40,10 +45,28 @@
             </form>
         </section>
     </main>
-    <footer class="rodape">
-            <p>Para baixar o código deste site <a href="https://github.com/Jhonny10k/PROJETO---FINAL-V5.3.git" class="download-btn">clique aqui</a>.</p>
-            <p>© 2024 Direitos reservados.</p>
-        </footer>
+
+    <footer><!--Inicio do footer-->
+        <div class="container">
+            <div class="about-column download-page">
+                <img src="img/230-132.svg" alt="Logo Ciber Guia" class="margem-baixo-1 margem-topo-1">
+                <p class="margem-baixo-2">Site desenvolvido para fins Educacionais </p>
+                <p class="margem-baixo-1"> Créditos: </p>
+                <div class="credit-links">
+                    <a class="cred" href="https://github.com/Jhonny10k" target="_blank">
+                        <i class="fab fa-github"></i> Jhonny
+                    </a>
+                    <a class="cred" href="https://github.com/stephanymarchena" target="_blank">
+                        <i class="fab fa-github"></i> Stephany
+                    </a>
+                    <a class="cred" href="https://github.com/Ap-Santos" target="_blank">
+                        <i class="fab fa-github"></i> Ariel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer><!--Fim footer-->
+   
     <script src="form.js"></script>
 </body>
 </html>
