@@ -1,0 +1,378 @@
+
+/* Estilo geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+    padding: 15px;
+}
+
+:root{
+    --cor-preta: #000;
+    --cor-branca: #FFF;
+    --verde-principal:#3EB24B;
+    --verde-secundario:#B5FFB3;
+   
+}
+
+
+
+/* Animações e Efeitos */
+header, .content, footer {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Efeito de Scroll */
+.content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos do cabeçalho */
+header {
+    background: var(--verde-principal);
+    color: var(--cor-branca);
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* Estilo dos itens da lista */
+.content ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.content ol li {
+    text-align: justify;
+    word-spacing: normal;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    margin-bottom: 20px;
+}
+
+/* Menu Mobile */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    margin-left: auto;
+    cursor: pointer;
+}
+.menu {
+    display: flex;
+}
+.menu-toggle[aria-expanded="true"] + .menu {
+    display: block;
+}
+
+/* Estilos da seção de conteúdo */
+.content {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.content p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Responsividade do vídeo */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo do formulário de contato */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+.form-messages {
+    margin-top: 10px;
+    color: red;
+}
+
+/* Estilo da galeria de imagens */
+.galeria-imagens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.galeria-imagens img {
+    width: 30%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.galeria-imagens img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para a seção com foto e texto */
+.galeria-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.galeria-imagem {
+    flex: 0 1 auto;
+    max-width: 40%;
+}
+
+.galeria-imagem img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 2rem;
+    padding-top: 0.25rem;
+}
+
+.galeria-texto {
+    flex: 1 1 60%;
+    text-align: left;
+    padding: 20px;
+}
+
+.galeria-texto h3 {
+    margin: 0 0 10px 0;
+    color: #4CAF50;
+    font-size: 1.5em;
+}
+
+.galeria-texto p {
+    text-align: justify;
+    word-spacing: normal;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    font-size: 1.15rem;
+}
+
+/* Estilo do rodapé */
+footer {
+    margin-top: 20px;
+    background: #4CAF50;
+    color: #fff;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+/* Mobile first */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+        background: #4CAF50;
+        width: 100%;
+    }
+    header nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        padding: 30px;
+    }
+
+    .content {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+
+    header {
+        padding: 40px 0;
+    }
+
+    .content {
+        padding: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    header {
+        padding: 60px 0;
+    }
+
+    header nav ul li {
+        margin: 0 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content {
+        max-width: 1000px;
+    }
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .galeria-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .galeria-imagem, .galeria-texto {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .galeria-texto {
+        text-align: center;
+    }
+}
+
+@media (max-width: 390px){
+    hr{
+      display: none;
+      
+    }
+  }
+
+
+  .download-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.download-btn:hover {
+    background-color: #3EB24B;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+}
+
+.download-btn:active {
+    transform: scale(0.9);
+}
